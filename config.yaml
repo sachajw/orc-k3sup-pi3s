@@ -1,0 +1,22 @@
+# global settings
+tls-san:
+  - "pangarabbit.com"
+node-label:
+  - "cluster=pi3s"
+# Example of how to add node taint
+#node-taint:
+#  - alice=bob:NoExecute
+#  - charlie=delta:Noschedule
+
+# k3s server configuration
+server: "https://pi3s.pangarabbit.com"
+bind-address: "0.0.0.0"
+https-listen-port: "6443"
+write-kubeconfig-mode: "0644"
+write-kubeconfig: "/etc/rancher/k3s/k3s.yaml"
+# node token for server nodes
+#token: ""
+debug: true
+alsologtostderr: true
+# PostgreSQL data source
+#datastore-endpoint: "postgres://postgres@pgsql01.pangarabbit.com:5432/k3s"
