@@ -1,3 +1,4 @@
+
 #!/bin/sh
 
 echo "Setting up primary server 1"
@@ -6,7 +7,7 @@ k3sup install --host 192.168.0.48 \
 --cluster \
 --local-path kubeconfig \
 --context pi3s \
---k3s-extra-args "--disable traefik"
+--k3s-extra-args "--disable traefik --tls-san 192.168.0.48 --tls-san 192.168.191.177 --tls-san 192.168.191.42 --tls-san 192.168.191.82 --tls-san pi3s.pangarabbit.com"
 
 echo "Fetching the server's node-token into memory"
 
