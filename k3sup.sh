@@ -37,21 +37,18 @@ k3sup join \
 --host 192.168.0.149 \
 --server-host 192.168.0.48 \
 --node-token "$NODE_TOKEN" \
---user tvl \
---k3s-extra-args "--disable traefik --disable=servicelb"
+--user tvl
 
 echo "Setting up worker: 2"
 k3sup join \
 --host 192.168.0.115 \
 --server-host 192.168.0.48 \
 --node-token "$NODE_TOKEN" \
---user tvl \
---k3s-extra-args "--disable traefik --disable=servicelb"
+--user tvl
 
 echo "Setting up worker: 3"
 k3sup join \
 --host 192.168.0.23 \
 --server-host 192.168.0.48 \
 --node-token "$NODE_TOKEN" \
---user tvl \
---k3s-extra-args "--disable traefik --disable=servicelb"
+--user tvl
