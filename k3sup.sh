@@ -52,3 +52,23 @@ k3sup join \
 --server-host 192.168.0.48 \
 --node-token "$NODE_TOKEN" \
 --user tvl
+
+echo "Setting up worker: 4"
+k3sup join \
+--host 192.168.0. \
+--server-host 192.168.0.48 \
+--node-token "$NODE_TOKEN" \
+--user tvl
+
+echo "Setting up worker: 5"
+k3sup join \
+--host 192.168.0. \
+--server-host 192.168.0.48 \
+--node-token "$NODE_TOKEN" \
+--user tvl
+
+echo "Setting up worker: 6"
+k3sup join \
+--host 192.168.0. \
+--server-host 192.168.0.48 \
+--node-token "$NODE_TOKEN" \
