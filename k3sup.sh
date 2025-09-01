@@ -1,4 +1,3 @@
-
 #!/bin/sh
 
 echo "Setting up primary server 1"
@@ -12,9 +11,9 @@ k3sup install --host 192.168.0.48 \
 
 echo "Fetching the server's node-token into memory"
 
-export NODE_TOKEN=$(k3sup node-token --host 192.168.0.48 --user tvl)
+export NODE_TOKEN="$(k3sup node-token --host 192.168.0.48 --user tvl)"
 
-echo "Setting up additional server: 2"
+echo "Setting up server: 2"
 k3sup join \
 --host 192.168.0.107 \
 --server-host 192.168.0.48 \
@@ -23,7 +22,7 @@ k3sup join \
 --user tvl \
 --k3s-extra-args "--disable traefik --disable=servicelb"
 
-echo "Setting up additional server: 3"
+echo "Setting up server: 3"
 k3sup join \
 --host 192.168.0.141 \
 --server-host 192.168.0.48 \
@@ -53,22 +52,42 @@ k3sup join \
 --node-token "$NODE_TOKEN" \
 --user tvl
 
-#echo "Setting up worker: 4"
-#k3sup join \
-#--host 192.168.0. \
-#--server-host 192.168.0.48 \
-#--node-token "$NODE_TOKEN" \
-#--user tvl
-#
-#echo "Setting up worker: 5"
-#k3sup join \
-#--host 192.168.0. \
-#--server-host 192.168.0.48 \
-#--node-token "$NODE_TOKEN" \
-#--user tvl
-#
-#echo "Setting up worker: 6"
-#k3sup join \
-#--host 192.168.0. \
-#--server-host 192.168.0.48 \
-#--node-token "$NODE_TOKEN" \
+echo "Setting up worker: 4"
+k3sup join \
+--host 192.168.0.149 \
+--server-host 192.168.0.48 \
+--node-token "$NODE_TOKEN" \
+--user tvl
+
+echo "Setting up worker: 5"
+k3sup join \
+--host 192.168.0.115 \
+--server-host 192.168.0.48 \
+--node-token "$NODE_TOKEN" \
+--user tvl
+
+echo "Setting up worker: 6"
+k3sup join \
+--host 192.168.0.23 \
+--server-host 192.168.0.48 \
+--node-token "$NODE_TOKEN" \
+
+echo "Setting up worker: 7"
+k3sup join \
+--host 192.168.0.93 \
+--server-host 192.168.0.48 \
+--node-token "$NODE_TOKEN" \
+--user tvl
+
+echo "Setting up worker: 8"
+k3sup join \
+--host 192.168.0.114 \
+--server-host 192.168.0.48 \
+--node-token "$NODE_TOKEN" \
+--user tvl
+
+echo "Setting up worker: 9"
+k3sup join \
+--host 192.168.0.57 \
+--server-host 192.168.0.48 \
+--node-token "$NODE_TOKEN" \
